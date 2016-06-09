@@ -1,3 +1,6 @@
+general:
+  build_dir: measures
+
 machine:
   services:
     - docker
