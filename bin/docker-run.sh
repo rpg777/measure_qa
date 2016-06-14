@@ -10,7 +10,6 @@ eval "$(rbenv init -)"
 # Each group must have a total runtime less
 # than 2 hrs.
 cd /measure_qa
-ruby test
 case $CIRCLE_NODE_INDEX in
   0)
     rake test:example
