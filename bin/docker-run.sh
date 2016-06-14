@@ -12,7 +12,7 @@ eval "$(rbenv init -)"
 ls
 case $CIRCLE_NODE_INDEX in
   0)
-    rake test:measures
+    rake test:measures --trace
     rake test:gem_group_0
     ;;
   1)
