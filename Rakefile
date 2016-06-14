@@ -10,31 +10,17 @@ end
 
 require 'rake/testtask'
 desc 'Run test group 0'
-Rake::TestTask.new('test:gem_group_0') do |task|
+Rake::TestTask.new('test:example') do |task|
   task.test_files = FileList[
-  '/Users/rgugliel/src/measure_qa/measures/plug_load_controls/tests/plug_load_controls_test.rb',
+  'measures/plug_load_controls/tests/plug_load_controls_test.rb',
   ]
 end
 
 require 'rake/testtask'
-desc 'Run the measure tests'
-Rake::TestTask.new('test:large_office') do |task|
+desc 'Run all measure tests'
+Rake::TestTask.new('test:allofem') do |task|
   task.libs << 'test'
-  task.test_files = FileList['openstudio-standards/test/test_one_building_office_2010.rb']
-end
-
-require 'rake/testtask'
-desc 'Run the measure tests'
-Rake::TestTask.new('test:one_building') do |task|
-  task.libs << 'test'
-  task.test_files = FileList['openstudio-standards/test/test_one_building.rb']
-end
-
-require 'rake/testtask'
-desc 'Run the measure tests'
-Rake::TestTask.new('test:gem') do |task|
-  task.libs << 'test'
-  task.test_files = FileList['openstudio-standards/test/test_*.rb']
+  task.test_files = FileList['measures/*/test/test_*.rb']
 end
 
 require 'rake/testtask'
@@ -54,9 +40,6 @@ Rake::TestTask.new('test:measures') do |task|
   ]
 end
 
-desc 'Run all tests'
-task 'test:all' => ['test:prm', 'test:gem', 'test:measures']
-
 require 'rubocop/rake_task'
 desc 'Check the code for style consistency'
 RuboCop::RakeTask.new(:rubocop) do |task|
@@ -66,8 +49,3 @@ RuboCop::RakeTask.new(:rubocop) do |task|
   # don't abort rake on failure
   task.fail_on_error = false
 end
-
-desc 'Build, install, test gem & measures'
-task :btest => [:install, 'test:all']
-
-task :default => :btest
