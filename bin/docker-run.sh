@@ -9,6 +9,7 @@ eval "$(rbenv init -)"
 # Test groups are defined in the Rakefile.
 # Each group must have a total runtime less
 # than 2 hrs.
+ls
 case $CIRCLE_NODE_INDEX in
   0)
     rake test:measures
