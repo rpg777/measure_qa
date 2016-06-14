@@ -10,6 +10,7 @@ eval "$(rbenv init -)"
 # Each group must have a total runtime less
 # than 2 hrs.
 echo "ls..."
+pwd
 ls -l
 echo "...done"
 case $CIRCLE_NODE_INDEX in
