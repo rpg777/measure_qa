@@ -10,23 +10,24 @@ eval "$(rbenv init -)"
 # Each group must have a total runtime less
 # than 2 hrs.
 cd /measure_qa
-case $CIRCLE_NODE_INDEX in
-  0)
-    rake test:example
-    rake test:rubocop
-    #rake test:gem_group_0
-    ;;
-  1)
-    rake test:gem_group_1
-    ;;
-  2)
-    rake test:gem_group_2
-    ;;
-  3)
-    rake test:gem_group_3
-    ;;
-  *)
-esac
+rake test:example
+# case $CIRCLE_NODE_INDEX in
+#   0)
+#     rake test:example
+#     #rake test:rubocop
+#     #rake test:gem_group_0
+#     ;;
+#   1)
+#     rake test:gem_group_1
+#     ;;
+#   2)
+#     rake test:gem_group_2
+#     ;;
+#   3)
+#     rake test:gem_group_3
+#     ;;
+#   *)
+# esac
     
 # Loop through the test files and run
 # every nth test, where n is determined
