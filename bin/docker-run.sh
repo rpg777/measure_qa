@@ -10,6 +10,7 @@ eval "$(rbenv init -)"
 # Each group must have a total runtime less
 # than 2 hrs.
 cd /measure_qa
+echo "RUBYLIB = $RUBYLIB"
 rake test:example
 # case $CIRCLE_NODE_INDEX in
 #   0)
