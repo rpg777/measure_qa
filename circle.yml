@@ -20,6 +20,3 @@ test:
         parallel: true
     - ls $CIRCLE_TEST_REPORTS/minitest:
         parallel: true
-        
-  post:
-    - bundle exec rubocop
