@@ -1,13 +1,12 @@
 require 'openstudio'
 require 'openstudio/ruleset/ShowRunnerOutput'
 require 'minitest/autorun'
-require_relative 'minitest_helper'
 
 require_relative '../measure.rb'
 
 require 'fileutils'
 
-class PlugLoadControlsTest < MiniTest::Test
+class PlugLoadControlsTest < MiniTest::Unit::TestCase
 
   # def setup
   # end
