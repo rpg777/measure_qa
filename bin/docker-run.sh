@@ -12,8 +12,8 @@ eval "$(rbenv init -)"
 cd /measure_qa
 echo "RUBYLIB = $RUBYLIB"
 bundle install
-rake test:example
-rake rubocop
+bundle exec rake test:example
+bundle exec rake rubocop
 # case $CIRCLE_NODE_INDEX in
 #   0)
 #     rake test:example
