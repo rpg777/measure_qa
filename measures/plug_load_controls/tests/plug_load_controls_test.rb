@@ -6,7 +6,7 @@ require_relative '../measure.rb'
 
 require 'fileutils'
 
-class PlugLoadControlsTest < MiniTest::Unit::TestCase
+class PlugLoadControlsTest < MiniTest::Test
 
   # def setup
   # end
