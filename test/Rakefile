@@ -15,7 +15,7 @@ require 'rake/testtask'
 desc 'example test'
 Rake::TestTask.new('test:example') do |task|
   task.test_files = FileList[
-  'measures/plug_load_controls/tests/plug_load_controls_test.rb',
+  './../measures/plug_load_controls/tests/plug_load_controls_test.rb',
   ]
 end
 
