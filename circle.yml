@@ -13,9 +13,13 @@ test:
         parallel: true
     - mkdir -p test/reports:
         parallel: true
+    - echo eval "$(cd "$(ruby -e "File.join(ENV[:CIRCLE_ARTIFACTS.to_s], :coveralls.to_s)" && ls -al)":
+        parallel: true
     - docker run -e CIRCLE_NODE_TOTAL -e CIRCLE_NODE_INDEX -e CIRCLE_ARTIFACTS -e COVERALLS_REPO_TOKEN -v $(pwd):/measure_qa nrel/openstudio /measure_qa/bin/docker-run.sh:
         parallel: true
         timeout: 7200
+    - echo eval "$(cd "$(ruby -e "File.join(ENV[:CIRCLE_ARTIFACTS.to_s], :coveralls.to_s)" && ls -al)":
+        parallel: true
     - ls $CIRCLE_TEST_REPORTS/minitest:
         parallel: true        
     - rsync -av test/reports/ $CIRCLE_TEST_REPORTS/minitest/:
