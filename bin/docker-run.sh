@@ -12,6 +12,7 @@ eval "$(rbenv init -)"
 cd /measure_qa/test
 echo "RUBYLIB = $RUBYLIB"
 
+gem update --system
 gem install bundler
 bundle update
 bundle install
