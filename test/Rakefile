@@ -12,6 +12,7 @@ require './coverage.rb'
 require 'rake/testtask'
 desc 'example test'
 Rake::TestTask.new('test:example') do |task|
+  SimpleCov.command_name 'test:example'
   task.test_files = FileList[
   './../measures/plug_load_controls/tests/plug_load_controls_test.rb',
   ]
@@ -20,6 +21,7 @@ end
 require 'rake/testtask'
 desc 'example test 2'
 Rake::TestTask.new('test:example2') do |task|
+  SimpleCov.command_name 'test:example2'
   task.test_files = FileList[
   './../measures/aedg_office_swh/tests/AedgOfficeSwh.rb',
   ]
