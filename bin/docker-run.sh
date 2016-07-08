@@ -9,12 +9,11 @@ eval "$(rbenv init -)"
 # Test groups are defined in the Rakefile.
 # Each group must have a total runtime less
 # than 2 hrs.
-cd /measure_qa
+cd /measure_qa/test
 echo "RUBYLIB = $RUBYLIB"
 
-gem install bundler # testing...
-
-# bundle install
+gem install bundler
+bundle install
 bundle exec rake test:example
 bundle exec rake rubocop
 
