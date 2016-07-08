@@ -1,6 +1,6 @@
 machine:
   ruby:
-    version: 2.0.0-p647 # need to dictate 2.0. up here so it's in the first container and we can install all our gems
+    version: 2.0.0-p594 # need to dictate 2.0. up here so it's in the first container and we can install all our gems
   services:
     - docker
 
