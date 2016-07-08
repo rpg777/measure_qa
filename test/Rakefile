@@ -1,4 +1,4 @@
-require 'coverage.rb'
+require './coverage.rb'
 
 # require 'bundler/gem_tasks'
 # begin
