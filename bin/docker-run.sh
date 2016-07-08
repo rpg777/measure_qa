@@ -11,6 +11,9 @@ eval "$(rbenv init -)"
 # than 2 hrs.
 cd /measure_qa
 echo "RUBYLIB = $RUBYLIB"
+
+gem install bundler # testing...
+
 bundle install
 bundle exec rake test:example
 bundle exec rake rubocop
