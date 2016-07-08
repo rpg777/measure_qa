@@ -5,7 +5,7 @@ export CIRCLECI=true
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-echo eval "$(cd "$(ruby -e "File.join(ENV[:CIRCLE_ARTIFACTS.to_s], :coveralls.to_s)" && ls -al)"
+echo eval "$(cd "$(ruby -e "puts File.join(ENV[:CIRCLE_ARTIFACTS.to_s], :coveralls.to_s)")" && ls -al)"
 
 # Run a specific set of tests on each node.
 # Test groups are defined in the Rakefile.
@@ -21,7 +21,7 @@ bundle install
 rake test:example2
 bundle exec rake rubocop
 
-echo eval "$(cd "$(ruby -e "File.join(ENV[:CIRCLE_ARTIFACTS.to_s], :coveralls.to_s)" && ls -al)"
+echo eval "$(cd "$(ruby -e "puts File.join(ENV[:CIRCLE_ARTIFACTS.to_s], :coveralls.to_s)")" && ls -al)"
 
 # case $CIRCLE_NODE_INDEX in
 #   0)
