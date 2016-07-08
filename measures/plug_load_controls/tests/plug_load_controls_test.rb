@@ -1,7 +1,6 @@
 require 'openstudio'
 require 'openstudio/ruleset/ShowRunnerOutput'
 require 'minitest/autorun'
-require 'minitest/spec'
 
 require_relative '../measure.rb'
 
