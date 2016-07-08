@@ -6,3 +6,8 @@ gem 'rubocop'
 gem 'simplecov', :require => false, :group => :test # added RPG
 gem 'coveralls', require: false
 gem 'minitest-ci', :git => 'https://github.com/circleci/minitest-ci.git' # For CircleCI Automatic test metadata collection
+gem 'test-unit', '2.0.0'
+gem 'minitest'
+gem 'ci_reporter_rspec'
+gem 'rubocop-checkstyle_formatter'
+gem 'rspec' '~> 3.4'
