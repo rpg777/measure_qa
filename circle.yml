@@ -13,7 +13,7 @@ test:
         parallel: true
     - mkdir -p test/reports:
         parallel: true
-    - mkdir -p $CIRCLE_ARTIFACTS:
+    - mkdir -p $CIRCLE_ARTIFACTS/coveralls:
         parallel: true
     - echo eval "$(cd "$(ruby -e "puts File.join(ENV[:CIRCLE_ARTIFACTS.to_s], :coveralls.to_s)")" && ls -al)":
         parallel: true
