@@ -14,6 +14,18 @@ echo "RUBYLIB = $RUBYLIB"
 bundle install
 bundle exec rake test:example
 bundle exec rake rubocop
+
+require 'simplecov'
+
+# save to CircleCI's artifacts directory if we're on CircleCI
+if ENV['CIRCLE_ARTIFACTS']
+  dir = File.join(ENV['CIRCLE_ARTIFACTS'], "coverage")
+  SimpleCov.coverage_dir(dir)
+end
+
+SimpleCov.start
+
+
 # case $CIRCLE_NODE_INDEX in
 #   0)
 #     rake test:example

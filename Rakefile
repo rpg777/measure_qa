@@ -8,8 +8,11 @@
 #   exit e.status_code
 # end
 
+require 'coveralls'
+Coveralls.wear!
+
 require 'rake/testtask'
-desc 'Run test group 0'
+desc 'example test'
 Rake::TestTask.new('test:example') do |task|
   task.test_files = FileList[
   'measures/plug_load_controls/tests/plug_load_controls_test.rb',
@@ -32,3 +35,4 @@ RuboCop::RakeTask.new(:rubocop) do |task|
   # don't abort rake on failure
   task.fail_on_error = false
 end
+
