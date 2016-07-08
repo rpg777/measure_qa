@@ -1,3 +1,4 @@
+require 'coverage.rb'
 
 # require 'bundler/gem_tasks'
 # begin
@@ -7,9 +8,6 @@
 #   $stderr.puts 'Run `bundle install` to install missing gems'
 #   exit e.status_code
 # end
-
-require 'coveralls'
-Coveralls.wear!
 
 require 'rake/testtask'
 desc 'example test'
