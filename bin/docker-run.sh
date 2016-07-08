@@ -15,7 +15,7 @@ echo "RUBYLIB = $RUBYLIB"
 gem install bundler
 bundle update
 bundle install
-bundle exec rake test:example
+bundle exec rake test:example2
 bundle exec rake rubocop
 
 

@@ -19,6 +19,14 @@ Rake::TestTask.new('test:example') do |task|
   ]
 end
 
+require 'rake/testtask'
+desc 'example test 2'
+Rake::TestTask.new('test:example2') do |task|
+  task.test_files = FileList[
+  './../measures/aedg_office_swh/tests/AedgOfficeSwh.rb',
+  ]
+end
+
 # require 'rake/testtask'
 # desc 'Run all measure tests'
 # Rake::TestTask.new('test:allofem') do |task|
