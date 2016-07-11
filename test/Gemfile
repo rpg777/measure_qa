@@ -5,15 +5,7 @@ source 'http://rubygems.org'
 gem 'rake', '~> 11.0'
 gem 'simplecov', :require => false, :group => :test # added RPG
 gem 'coveralls', require: false
-gem 'minitest-ci', :git => 'https://github.com/circleci/minitest-ci.git' # For CircleCI Automatic test metadata collection
 gem 'test-unit', '2.0.0'
 gem 'minitest'
 gem 'minitest-reporters'
-gem 'ci_reporter_rspec'
-gem 'rspec', '~> 3.4'
-
-group :test do
-  gem 'coveralls', require: false
-  gem 'rubocop'
-  gem 'rubocop-checkstyle_formatter'
-end
+gem 'minitest-ci', :git => 'https://github.com/circleci/minitest-ci.git' # For CircleCI Automatic test metadata collection
