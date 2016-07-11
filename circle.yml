@@ -28,3 +28,7 @@ test:
         parallel: true
     - ls $CIRCLE_TEST_REPORTS/minitest:
         parallel: true
+
+notify:
+  webhooks:
+    - url: https://coveralls.io/webhook?repo_token=n6qtMY4H5ZR6v8cxMqj7r8QfiM8hNYqWD
