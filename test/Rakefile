@@ -1,5 +1,4 @@
 require './coverage.rb'
-require 'rubocop'
 
 # require 'bundler/gem_tasks'
 # begin
