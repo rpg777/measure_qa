@@ -3,8 +3,10 @@ require 'openstudio'
 require 'openstudio/ruleset/ShowRunnerOutput'
 
 require "#{File.dirname(__FILE__)}/../measure.rb"
+require "#{File.dirname(__FILE__)}/../../../test/minitest_helper.rb"
 
 require 'minitest/autorun'
+require 'test_helper'
 
 class AedgOfficeSwh_Test < MiniTest::Test
 
