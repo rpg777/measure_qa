@@ -1,12 +1,13 @@
+require 'simplecov'
+SimpleCov.start
+
+require 'minitest/autorun'
+require (File.dirname(File.realdirpath(__FILE__)) + '/../../../test/test_helper.rb') # Will need to fix for actual dir structure...
 require 'openstudio'
 
 require 'openstudio/ruleset/ShowRunnerOutput'
 
 require "#{File.dirname(__FILE__)}/../measure.rb"
-require "#{File.dirname(__FILE__)}/../../../test/minitest_helper.rb"
-
-require 'minitest/autorun'
-require 'test_helper'
 
 class AedgOfficeSwh_Test < MiniTest::Test
 

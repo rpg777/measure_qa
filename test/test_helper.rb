@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 require 'minitest/autorun'
 require 'minitest/reporters'
 
@@ -7,7 +10,7 @@ require 'fileutils'
 require 'openstudio'
 require 'openstudio/ruleset/ShowRunnerOutput'
 
-require 'simplecov'
+
 require 'coveralls'
 
 # Ignore some of the code in coverage testing
@@ -28,16 +31,7 @@ end
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new # spec-like progress
 
-puts "env is: #{::ENV.inspect}"
-
-# save to CircleCI's artifacts directory if we're on CircleCI
-if ENV['CIRCLE_ARTIFACTS']
-  puts 'Registering coverage artifact'
-  dir = File.join(ENV['CIRCLE_ARTIFACTS'], "coverage")
-  SimpleCov.coverage_dir(dir)
-else
-  puts 'Could not find ENV[CIRCLE_ARTIFACTS]'
-end
+#puts "env is: #{::ENV.inspect}"
 
 # Get the code coverage in html for local viewing
 # and in JSON for coveralls
@@ -47,4 +41,11 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   Coveralls::SimpleCov::Formatter
 ]
 
-SimpleCov.start
+# save to CircleCI's artifacts directory if we're on CircleCI
+if ENV['CIRCLE_ARTIFACTS']
+  puts 'Registering coverage artifact'
+  dir = File.join(ENV['CIRCLE_ARTIFACTS'], "coverage")
+  SimpleCov.coverage_dir(dir)
+else
+  puts '$CIRCLE_ARTIFACTS not set, running locally?'
+end
