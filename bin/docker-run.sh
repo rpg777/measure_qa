@@ -13,7 +13,7 @@ eval "$(rbenv init -)"
 # Each group must have a total runtime less
 # than 2 hrs.
 
-#cd /measure_qa/test
+cd /measure_qa/test
 
 # test crap
 echo "RUBYLIB = $RUBYLIB"
