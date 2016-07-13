@@ -21,7 +21,7 @@ gem update --system
 gem install bundler
 bundle update
 bundle install
-rake test:all
+rake test:example2
 bundle exec rake rubocop
 
 # test crap

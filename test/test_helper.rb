@@ -1,35 +1,11 @@
 require 'simplecov'
-SimpleCov.start
-
-require 'minitest/autorun'
-require 'minitest/reporters'
+require 'coveralls'
 
 require 'json'
 require 'fileutils'
 
 require 'openstudio'
 require 'openstudio/ruleset/ShowRunnerOutput'
-
-
-require 'coveralls'
-
-# Ignore some of the code in coverage testing
-=begin
-SimpleCov.start do
-  add_filter '/.idea/'
-  add_filter '/.yardoc/'
-  add_filter '/data/'
-  add_filter '/doc/'
-  add_filter '/docs/'
-  add_filter '/pkg/'
-  add_filter '/test/'
-  add_filter '/hvac_sizing/'
-  add_filter 'version'  
-end
-=end
-# $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-
-Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new # spec-like progress
 
 #puts "env is: #{::ENV.inspect}"
 
@@ -41,6 +17,11 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   Coveralls::SimpleCov::Formatter
 ]
 
+# Ignore some of the code in coverage testing
+SimpleCov.start
+#$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+
+
 # save to CircleCI's artifacts directory if we're on CircleCI
 if ENV['CIRCLE_ARTIFACTS']
   puts 'Registering coverage artifact'
@@ -49,3 +30,7 @@ if ENV['CIRCLE_ARTIFACTS']
 else
   puts '$CIRCLE_ARTIFACTS not set, running locally?'
 end
+
+require 'minitest/autorun'
+require 'minitest/reporters'
+Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new # spec-like progress
