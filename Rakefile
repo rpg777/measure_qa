@@ -44,7 +44,7 @@ end
 
 require 'rubocop/rake_task'
 desc 'Check the code for style consistency'
-RuboCop::RakeTask.new(:rubocop) do |task|
+RuboCop::RakeTask.new(:run_rubocop) do |task|
   task.options = ['--no-color', '--out=rubocop-results.xml']
   #task.formatters = ['RuboCop::Formatter::CheckstyleFormatter']
   #task.requires = ['rubocop/formatter/checkstyle_formatter']
