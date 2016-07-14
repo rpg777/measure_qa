@@ -8,7 +8,7 @@ require 'fileutils'
 require 'openstudio'
 require 'openstudio/ruleset/ShowRunnerOutput'
 
-#puts "env is: #{::ENV.inspect}"
+puts "env is: #{::ENV.inspect}"
 
 # Get the code coverage in html for local viewing
 # and in JSON for coveralls
@@ -18,12 +18,6 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   Coveralls::SimpleCov::Formatter
 ]
 
-# Ignore some of the code in coverage testing
-SimpleCov.start
-
-#$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
-
-
 # save to CircleCI's artifacts directory if we're on CircleCI
 if ENV['CIRCLE_ARTIFACTS']
   puts 'Registering coverage artifact'
@@ -32,6 +26,14 @@ if ENV['CIRCLE_ARTIFACTS']
 else
   puts '$CIRCLE_ARTIFACTS not set, running locally?'
 end
+
+# Ignore some of the code in coverage testing
+SimpleCov.start
+
+#$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+
+
+
 
 require 'minitest/autorun'
 require 'minitest/reporters'
