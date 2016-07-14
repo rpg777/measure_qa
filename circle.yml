@@ -30,6 +30,8 @@ test:
     #    parallel: true
     - rsync -av test/reports/ $CIRCLE_TEST_REPORTS/minitest/:
         parallel: true
+    - rsync -av coverage/ $CIRCLE_TEST_REPORTS/coverage/:
+        parallel: true
 
 notify: 
   webhooks: 
