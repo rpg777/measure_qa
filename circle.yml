@@ -29,7 +29,7 @@ test:
     #- ls $CIRCLE_TEST_REPORTS/minitest:
     #    parallel: true
     - rsync -av test/reports/ $CIRCLE_TEST_REPORTS/minitest/:
-      parallel: true
+        parallel: true
 
 notify: 
   webhooks: 
