@@ -24,7 +24,7 @@ bundle update
 bundle install
 
 rake test:example2
-bundle exec rake run_rubocop
+#bundle exec rake run_rubocop
 
 # test crap
 #echo eval "$(cd "$(ruby -e "puts File.join(ENV[:CIRCLE_ARTIFACTS.to_s], :coveralls.to_s)")" && ls -al)"

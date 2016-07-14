@@ -42,7 +42,7 @@ end
 #   task.test_files = FileList['measures/*/test/test_*.rb']
 # end
 
-require 'rubocop/rake_task'
+=beginrequire 'rubocop/rake_task'
 desc 'Check the code for style consistency'
 RuboCop::RakeTask.new(:run_rubocop) do |task|
   task.options = ['--no-color', '--out=rubocop-results.xml']
@@ -51,4 +51,4 @@ RuboCop::RakeTask.new(:run_rubocop) do |task|
   # don't abort rake on failure
   task.fail_on_error = false
 end
-
+=end
