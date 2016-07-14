@@ -32,8 +32,8 @@ test:
     #    parallel: true
     #- ls $CIRCLE_TEST_REPORTS/minitest:
     #    parallel: true
-    - rsync -av test/coverage/ $CIRCLE_TEST_REPORTS/coverage/:
-      parallel: true
+    #- rsync -av test/coverage/ $CIRCLE_TEST_REPORTS/coverage/:
+    #  parallel: true
  
 notify: 
   webhooks: 
