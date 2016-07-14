@@ -6,7 +6,7 @@ machine:
 
 general:
   artifacts:
-    - "coverage/" # relative to the build directory
+    - $CIRCLE_TEST_REPORTS
 
 dependencies:
   override:
