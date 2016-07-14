@@ -19,7 +19,7 @@ test:
         parallel: true
     - mkdir -p $CIRCLE_TEST_REPORTS/coverage:
         parallel: true
-     mkdir -p coverage:
+    - mkdir -p coverage:
         parallel: true
     #- mkdir -p $CIRCLE_ARTIFACTS/coveralls:
     #    parallel: true
