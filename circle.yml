@@ -15,10 +15,6 @@ test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/minitest:
         parallel: true
-    - mkdir -p $CIRCLE_TEST_REPORTS/coverage:
-        parallel: true
-    - mkdir -p $CIRCLE_TEST_REPORTS/rubocop:
-        parallel: true
     - mkdir -p test/reports:
         parallel: true
     - mkdir -p $CIRCLE_ARTIFACTS/coveralls:
@@ -32,9 +28,9 @@ test:
     #    parallel: true
     #- ls $CIRCLE_TEST_REPORTS/minitest:
     #    parallel: true
-    #- rsync -av test/coverage/ $CIRCLE_TEST_REPORTS/coverage/:
-    #  parallel: true
- 
+    - rsync -av test/reports/ $CIRCLE_TEST_REPORTS/minitest/:
+      parallel: true
+
 notify: 
   webhooks: 
     - url: https://coveralls.io/webhook?repo_token=$COVERALLS_REPO_TOKEN
