@@ -7,10 +7,10 @@
 #   exit e.status_code
 # end
 
-#require 'simplecov'
-#SimpleCov.start
-
 require 'rake/testtask'
+
+all_tests = Dir['measures/*/tests/*_test.rb']
+
 desc 'example test'
 Rake::TestTask.new('test:example') do |task|
   #SimpleCov.command_name 'test:example'
@@ -19,20 +19,15 @@ Rake::TestTask.new('test:example') do |task|
   ]
 end
 
-require 'rake/testtask'
 desc 'example test 2'
 Rake::TestTask.new('test:example2') do |task|
   task.pattern = 'measures/**/*_test.rb'
   #SimpleCov.command_name 'test:example2'
 end
 
-require 'rake/testtask'
-desc 'example test all'
-Rake::TestTask.new('test:all') do |task|
-  task.test_files = FileList[
-  './../measures/aedg_office_swh/tests/AedgOfficeSwh.rb',
-  './../measures/plug_load_controls/tests/plug_load_controls_test.rb',
-  ]
+desc 'all tests'
+Rake::TestTask.new('test:all_tests') do |task|
+  task.test_files = all_tests
 end
 
 # require 'rake/testtask'

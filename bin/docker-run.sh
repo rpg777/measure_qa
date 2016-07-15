@@ -13,7 +13,7 @@ eval "$(rbenv init -)"
 # Each group must have a total runtime less
 # than 2 hrs.
 
-cd /measure_qa/test
+cd /measure_qa
 
 # test crap
 echo "RUBYLIB = $RUBYLIB"
@@ -23,7 +23,7 @@ gem install bundler
 bundle update
 bundle install
 
-rake test:example2
+rake test:all_tests
 #bundle exec rake run_rubocop
 
 # test crap
