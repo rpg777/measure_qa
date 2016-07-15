@@ -28,7 +28,9 @@ else
 end
 
 # Ignore some of the code in coverage testing
-SimpleCov.start
+SimpleCov.start do 
+  add_filter '/measures/.*/tests/'
+end
 
 #$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
