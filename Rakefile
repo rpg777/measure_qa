@@ -1,3 +1,4 @@
+require 'bundler'
 require 'bundler/gem_tasks'
 begin
   Bundler.setup
@@ -15,7 +16,20 @@ require 'pp'
 require 'colored'
 require 'json'
 
-all_tests = Dir['measures/*/tests/*_test.rb']
+#all_tests = Dir['measures/*/tests/*_test.rb']
+
+namespace :test do
+
+  desc 'Run tests for all measures'
+  Rake::TestTask.new('all') do |t|
+    t.libs << 'test'
+    t.test_files = Dir['measures/*/tests/*.rb']
+    #t.warning = false
+    #t.verbose = true
+  end
+end
+
+task default: 'test:all'
 
 desc 'example test'
 Rake::TestTask.new('test:example') do |task|
