@@ -6,7 +6,7 @@ require 'rake/testtask'
 require 'ci/reporter/rake/minitest'
 
 require 'pp'
-require 'colored'
+# require 'colored'
 require 'json'
 
 namespace :test do

@@ -23,7 +23,7 @@ echo "RUBYLIB = $RUBYLIB"
 #bundle update
 bundle install
 
-rake test:all
+bundle exec rake test:all
 
 
 #bundle exec rake run_rubocop
