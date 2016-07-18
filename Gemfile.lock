@@ -18,7 +18,6 @@ GEM
     ci_reporter_minitest (1.0.0)
       ci_reporter (~> 2.0)
       minitest (~> 5.0)
-    colored (1.2)
     coveralls (0.8.0)
       multi_json (~> 1.10)
       rest-client (>= 1.6.8, < 2)
@@ -80,7 +79,6 @@ PLATFORMS
 
 DEPENDENCIES
   ci_reporter_minitest (~> 1.0.0)
-  colored (~> 1.2)
   coveralls
   docker-api
   json (~> 1.7.7)
