@@ -18,12 +18,14 @@ cd /measure_qa
 # test crap
 echo "RUBYLIB = $RUBYLIB"
 
-gem update --system
-gem install bundler
-bundle update
+#gem update --system
+#gem install bundler
+#bundle update
 bundle install
 
-rake test:all_tests
+rake test:all
+
+
 #bundle exec rake run_rubocop
 
 # test crap
