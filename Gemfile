@@ -7,7 +7,7 @@ gem 'rake', '~> 11.1.2'
 #gem 'ci/reporter/rake/minitest'
 
 gem 'json', '~> 1.7.7'
-gem 'colored', '~> 1.2'
+# gem 'colored', '~> 1.2'
 
 group :test do
   gem 'minitest', '~> 5.4.0'
