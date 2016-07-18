@@ -1,16 +1,16 @@
-require 'bundler'
-require 'bundler/gem_tasks'
-begin
-  Bundler.setup
-rescue Bundler::BundlerError => e
-  $stderr.puts e.message
-  $stderr.puts 'Run `bundle install` to install missing gems'
-  exit e.status_code
-end
+# require 'bundler'
+# require 'bundler/gem_tasks'
+# begin
+#   Bundler.setup
+# rescue Bundler::BundlerError => e
+#   $stderr.puts e.message
+#   $stderr.puts 'Run `bundle install` to install missing gems'
+#   exit e.status_code
+# end
 
 require 'rake'
 require 'rake/testtask'
-require 'ci/reporter/rake/minitest'
+#require 'ci/reporter/rake/minitest'
 
 require 'pp'
 require 'colored'
@@ -22,7 +22,7 @@ namespace :test do
 
   desc 'Run tests for all measures'
   Rake::TestTask.new('all') do |t|
-    t.libs << 'test'
+    #t.libs << 'test'
     t.test_files = Dir['measures/*/tests/*.rb']
     #t.warning = false
     #t.verbose = true
@@ -45,10 +45,6 @@ Rake::TestTask.new('test:example2') do |task|
   #SimpleCov.command_name 'test:example2'
 end
 
-desc 'all tests'
-Rake::TestTask.new('test:all_tests') do |task|
-  task.test_files = all_tests
-end
 
 # require 'rake/testtask'
 # desc 'Run all measure tests'
