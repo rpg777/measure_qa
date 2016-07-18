@@ -13,10 +13,10 @@ puts "env is: #{::ENV.inspect}"
 # Get the code coverage in html for local viewing
 # and in JSON for coveralls
 #SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
-])
+]
 
 # save to CircleCI's artifacts directory if we're on CircleCI
 if ENV['CIRCLE_ARTIFACTS']
@@ -36,4 +36,5 @@ end
 
 require 'minitest/autorun'
 require 'minitest/reporters'
+
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new # spec-like progress
