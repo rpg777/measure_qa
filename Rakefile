@@ -49,9 +49,10 @@ task default: 'test:all'
 require 'rubocop/rake_task'
 desc 'Check the code for style consistency'
 RuboCop::RakeTask.new(:run_rubocop) do |task|
- task.options = ['--no-color', '--out=rubocop-results.xml']
- #task.formatters = ['RuboCop::Formatter::CheckstyleFormatter']
- #task.requires = ['rubocop/formatter/checkstyle_formatter']
- # don't abort rake on failure
- task.fail_on_error = false
+  style_files = ["measures/**/measure.rb", "measures/**/*.rb"]
+  task.options = ['--no-color', '--out=test/reports/rubocop-results.xml']
+  #task.formatters = ['RuboCop::Formatter::CheckstyleFormatter']
+  #task.requires = ['rubocop/formatter/checkstyle_formatter']
+  # don't abort rake on failure
+  task.fail_on_error = false
 end
