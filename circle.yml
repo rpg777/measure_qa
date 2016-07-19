@@ -15,6 +15,8 @@ test:
   override:
     - mkdir -p $CIRCLE_TEST_REPORTS/minitest:
         parallel: true
+    - mkdir -p $CIRCLE_TEST_REPORTS/coverage:
+        parallel: true
     - mkdir -p test/reports:
         parallel: true
 #    - mkdir -p $CIRCLE_TEST_REPORTS/coverage:
@@ -34,6 +36,8 @@ test:
     - ls $CIRCLE_TEST_REPORTS/minitest:
         parallel: true
     - rsync -av test/reports/ $CIRCLE_TEST_REPORTS/minitest/:
+        parallel: true
+    - rsync -av coverage/ $CIRCLE_TEST_REPORTS/coverage/:
         parallel: true
     - ls $CIRCLE_TEST_REPORTS/minitest:
         parallel: true
