@@ -43,9 +43,9 @@ test:
         parallel: true
     - rsync -av test/reports/ $CIRCLE_TEST_REPORTS/minitest/:
         parallel: true
-    - rsync -av coverage/ $CIRCLE_TEST_REPORTS/coverage/:
+    - rsync -av test/coverage/ $CIRCLE_TEST_REPORTS/coverage/:
         parallel: true
-    - rsync -av style/ $CIRCLE_TEST_REPORTS/style/:
+    - rsync -av test/style/ $CIRCLE_TEST_REPORTS/style/:
         parallel: true
     - ls $CIRCLE_TEST_REPORTS/minitest:
         parallel: true
