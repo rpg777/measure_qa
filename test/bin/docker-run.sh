@@ -5,17 +5,12 @@ export CIRCLECI=true
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# test crap
-#echo eval "$(cd "$(ruby -e "puts File.join(ENV[:CIRCLE_ARTIFACTS.to_s], :coveralls.to_s)")" && ls -al)"
-
 # Run a specific set of tests on each node.
 # Test groups are defined in the Rakefile.
 # Each group must have a total runtime less
 # than 2 hrs.
 
 cd /measure_qa
-
-# test crap
 echo "RUBYLIB = $RUBYLIB"
 
 #gem update --system
@@ -26,9 +21,6 @@ bundle install
 bundle exec rake test:all
 
 bundle exec rake run_rubocop
-
-# test crap
-#echo eval "$(cd "$(ruby -e "puts File.join(ENV[:CIRCLE_ARTIFACTS.to_s], :coveralls.to_s)")" && ls -al)"
 
 # case $CIRCLE_NODE_INDEX in
 #   0)

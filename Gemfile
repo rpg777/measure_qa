@@ -1,6 +1,4 @@
 source 'http://rubygems.org'
-
-# Specify your gem's dependencies in openstudio-standards.gemspec
 # gemspec
 gem 'rake', '~> 11.1.2'
 #gem 'rake/testtask'
