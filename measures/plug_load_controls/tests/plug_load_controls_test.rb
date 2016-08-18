@@ -17,8 +17,6 @@ class PlugLoadControlsTest < MiniTest::Test
   # def teardown
   # end
 
-  # force update
-
   def test_small_office
      
     # Create an instance of the measure
