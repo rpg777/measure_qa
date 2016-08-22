@@ -7,6 +7,8 @@ gem 'rake', '~> 11.1.2'
 gem 'json', '~> 1.7.7'
 # gem 'colored', '~> 1.2'
 
+gem 'bcl', :git => 'https://github.com/NREL/bcl-gem'
+
 group :test do
   gem 'minitest', '~> 5.4.0'
   gem 'rubocop', '~> 0.26.0'
