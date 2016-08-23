@@ -17,7 +17,7 @@ namespace :test do
   desc 'Run tests for all measures'
   Rake::TestTask.new('all') do |t|
     t.libs << 'test'
-    t.test_files = Dir['measures/parsed/**/tests/*_test.rb']
+    t.test_files = Dir['measures/**/tests/*_test.rb']
     t.warning = false
     t.verbose = true
   end
