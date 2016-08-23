@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Analysis Period Cash Flows</title>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="file:///C:/Users/dgoldwas/Documents/GitHub/OpenStudio/openstudiocore/resources/web_assets/bootstrap.min.css" rel="stylesheet">
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.3.9/d3.min.js"></script>
+<script type="text/javascript" src="file:///C:/Users/dgoldwas/Documents/GitHub/OpenStudio/openstudiocore/resources/web_assets/jquery.min.js"></script>
+<script type="text/javascript" src="file:///C:/Users/dgoldwas/Documents/GitHub/OpenStudio/openstudiocore/resources/web_assets/d3.min.js"></script>
+</head>
+<body>
+
+
+<br>&nbsp&nbspMeasure Name = AnalysisPeriodCashFlows<br><br>
+
+
+<div id="chartContainer">
+<script src="http://dimplejs.org/dist/dimple.v1.1.1.min.js"></script>
+
+<br>&nbsp&nbsp Annual Cash Flow (Not adjusted for inflation or utility escalation)<br>
+
+<script type="text/javascript">
+var svg = dimple.newSvg("body", 1200, 600);
+var data = [{"Type":"Building","Year":"January           2011","Cash Flow":8400.0},{"Type":"Energy","Year":"January           2011","Cash Flow":106.89},{"Type":"Water","Year":"January           2011","Cash Flow":0.0},{"Type":"Building","Year":"January           2012","Cash Flow":0.0},{"Type":"Energy","Year":"January           2012","Cash Flow":106.89},{"Type":"Water","Year":"January           2012","Cash Flow":0.0},{"Type":"Building","Year":"January           2013","Cash Flow":400.0},{"Type":"Energy","Year":"January           2013","Cash Flow":106.89},{"Type":"Water","Year":"January           2013","Cash Flow":0.0},{"Type":"Building","Year":"January           2014","Cash Flow":0.0},{"Type":"Energy","Year":"January           2014","Cash Flow":106.89},{"Type":"Water","Year":"January           2014","Cash Flow":0.0},{"Type":"Building","Year":"January           2015","Cash Flow":400.0},{"Type":"Energy","Year":"January           2015","Cash Flow":106.89},{"Type":"Water","Year":"January           2015","Cash Flow":0.0},{"Type":"Building","Year":"January           2016","Cash Flow":0.0},{"Type":"Energy","Year":"January           2016","Cash Flow":106.89},{"Type":"Water","Year":"January           2016","Cash Flow":0.0},{"Type":"Building","Year":"January           2017","Cash Flow":7329.03},{"Type":"Energy","Year":"January           2017","Cash Flow":106.89},{"Type":"Water","Year":"January           2017","Cash Flow":0.0},{"Type":"Building","Year":"January           2018","Cash Flow":0.0},{"Type":"Energy","Year":"January           2018","Cash Flow":106.89},{"Type":"Water","Year":"January           2018","Cash Flow":0.0},{"Type":"Building","Year":"January           2019","Cash Flow":400.0},{"Type":"Energy","Year":"January           2019","Cash Flow":106.89},{"Type":"Water","Year":"January           2019","Cash Flow":0.0},{"Type":"Building","Year":"January           2020","Cash Flow":0.0},{"Type":"Energy","Year":"January           2020","Cash Flow":106.89},{"Type":"Water","Year":"January           2020","Cash Flow":0.0},{"Type":"Building","Year":"January           2021","Cash Flow":400.0},{"Type":"Energy","Year":"January           2021","Cash Flow":106.89},{"Type":"Water","Year":"January           2021","Cash Flow":0.0},{"Type":"Building","Year":"January           2022","Cash Flow":0.0},{"Type":"Energy","Year":"January           2022","Cash Flow":106.89},{"Type":"Water","Year":"January           2022","Cash Flow":0.0},{"Type":"Building","Year":"January           2023","Cash Flow":7329.03},{"Type":"Energy","Year":"January           2023","Cash Flow":106.89},{"Type":"Water","Year":"January           2023","Cash Flow":0.0},{"Type":"Building","Year":"January           2024","Cash Flow":0.0},{"Type":"Energy","Year":"January           2024","Cash Flow":106.89},{"Type":"Water","Year":"January           2024","Cash Flow":0.0},{"Type":"Building","Year":"January           2025","Cash Flow":400.0},{"Type":"Energy","Year":"January           2025","Cash Flow":106.89},{"Type":"Water","Year":"January           2025","Cash Flow":0.0},{"Type":"Building","Year":"January           2026","Cash Flow":0.0},{"Type":"Energy","Year":"January           2026","Cash Flow":106.89},{"Type":"Water","Year":"January           2026","Cash Flow":0.0},{"Type":"Building","Year":"January           2027","Cash Flow":400.0},{"Type":"Energy","Year":"January           2027","Cash Flow":106.89},{"Type":"Water","Year":"January           2027","Cash Flow":0.0},{"Type":"Building","Year":"January           2028","Cash Flow":0.0},{"Type":"Energy","Year":"January           2028","Cash Flow":106.89},{"Type":"Water","Year":"January           2028","Cash Flow":0.0},{"Type":"Building","Year":"January           2029","Cash Flow":7329.03},{"Type":"Energy","Year":"January           2029","Cash Flow":106.89},{"Type":"Water","Year":"January           2029","Cash Flow":0.0},{"Type":"Building","Year":"January           2030","Cash Flow":0.0},{"Type":"Energy","Year":"January           2030","Cash Flow":106.89},{"Type":"Water","Year":"January           2030","Cash Flow":0.0},{"Type":"Building","Year":"January           2031","Cash Flow":400.0},{"Type":"Energy","Year":"January           2031","Cash Flow":106.89},{"Type":"Water","Year":"January           2031","Cash Flow":0.0},{"Type":"Building","Year":"January           2032","Cash Flow":0.0},{"Type":"Energy","Year":"January           2032","Cash Flow":106.89},{"Type":"Water","Year":"January           2032","Cash Flow":0.0},{"Type":"Building","Year":"January           2033","Cash Flow":400.0},{"Type":"Energy","Year":"January           2033","Cash Flow":106.89},{"Type":"Water","Year":"January           2033","Cash Flow":0.0},{"Type":"Building","Year":"January           2034","Cash Flow":0.0},{"Type":"Energy","Year":"January           2034","Cash Flow":106.89},{"Type":"Water","Year":"January           2034","Cash Flow":0.0},{"Type":"Building","Year":"January           2035","Cash Flow":7329.03},{"Type":"Energy","Year":"January           2035","Cash Flow":106.89},{"Type":"Water","Year":"January           2035","Cash Flow":0.0}];
+var myChart = new dimple.chart(svg, data);
+myChart.setBounds(60, 30, 1140, 400)
+var x = myChart.addCategoryAxis("x", "Year");
+x.addOrderRule("Year");
+myChart.addMeasureAxis("y", "Cash Flow");
+myChart.addSeries("Type", dimple.plot.bar);
+myChart.addLegend(60, 10, 1100, 20, "right");
+myChart.draw();
+</script>
+</div>
+
+
+<div id="chartContainer">
+<script src="http://dimplejs.org/dist/dimple.v1.1.1.min.js"></script>
+
+<br><br>&nbsp&nbsp Total Running Cash Flow (Not adjusted for inflation or utility escalation)<br>
+
+<script type="text/javascript">
+var svg = dimple.newSvg("body", 1200, 600);
+var data = [{"Year":"January           2011","Cash Flow":8506.89},{"Year":"January           2012","Cash Flow":8613.78},{"Year":"January           2013","Cash Flow":9120.67},{"Year":"January           2014","Cash Flow":9227.56},{"Year":"January           2015","Cash Flow":9734.45},{"Year":"January           2016","Cash Flow":9841.34},{"Year":"January           2017","Cash Flow":17277.26},{"Year":"January           2018","Cash Flow":17384.15},{"Year":"January           2019","Cash Flow":17891.04},{"Year":"January           2020","Cash Flow":17997.93},{"Year":"January           2021","Cash Flow":18504.82},{"Year":"January           2022","Cash Flow":18611.71},{"Year":"January           2023","Cash Flow":26047.63},{"Year":"January           2024","Cash Flow":26154.52},{"Year":"January           2025","Cash Flow":26661.41},{"Year":"January           2026","Cash Flow":26768.3},{"Year":"January           2027","Cash Flow":27275.19},{"Year":"January           2028","Cash Flow":27382.08},{"Year":"January           2029","Cash Flow":34818.0},{"Year":"January           2030","Cash Flow":34924.89},{"Year":"January           2031","Cash Flow":35431.78},{"Year":"January           2032","Cash Flow":35538.67},{"Year":"January           2033","Cash Flow":36045.56},{"Year":"January           2034","Cash Flow":36152.45},{"Year":"January           2035","Cash Flow":43588.37}];
+var myChart = new dimple.chart(svg, data);
+myChart.setBounds(60, 30, 1140, 400)
+var x = myChart.addCategoryAxis("x", "Year");
+x.addOrderRule("Year");
+myChart.addMeasureAxis("y", "Cash Flow");
+myChart.addSeries("Type", dimple.plot.line);
+// 5.0 shades of grey
+myChart.defaultColors = [
+    new dimple.color("#000000"),
+];
+myChart.draw();
+</script>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<measure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://bcl.nrel.gov/xsd/measures/version/1.0.xsd">
+ <schema_version>3.0</schema_version>
+ <name>dan_s_170_measure</name>
+ <uid>d423410c-4fee-42a9-a13e-bf28b4d6f0cc</uid>
+ <version_id>2caeb5aa-0be6-4a1e-92d4-309305bb1660</version_id>
+ <xml_checksum>57232789</xml_checksum>
+ <class_name>DanS170Measure</class_name>
+ <display_name>Dan's 1.7.0 measure</display_name>
+ <description>A 1.7.0 measure</description>
+ <modeler_description>A 1.7.0 measure</modeler_description>
+ <arguments>
+  <argument>
+   <name>space_name</name>
+   <display_name>New space name</display_name>
+   <description>This name will be used as the name of the new space.</description>
+   <type>String</type>
+   <required>true</required>
+   <model_dependent>false</model_dependent>
+  </argument>
+ </arguments>
+ <tags>
+  <tag>People.Characteristics</tag>
+ </tags>
+ <attributes>
+  <attribute>
+   <name>Measure Type</name>
+   <value>ModelMeasure</value>
+   <datatype>string</datatype>
+  </attribute>
+  <attribute>
+   <name>Intended Software Tool</name>
+   <value>Apply Measure Now</value>
+   <datatype>string</datatype>
+  </attribute>
+  <attribute>
+   <name>Intended Software Tool</name>
+   <value>OpenStudio Application</value>
+   <datatype>string</datatype>
+  </attribute>
+  <attribute>
+   <name>Intended Software Tool</name>
+   <value>Parametric Analysis Tool</value>
+   <datatype>string</datatype>
+  </attribute>
+ </attributes>
+ <files>
+  <file>
+   <version>
+    <software_program>OpenStudio</software_program>
+    <identifier>1.7.0</identifier>
+    <min_compatible>1.7.0</min_compatible>
+   </version>
+   <filename>measure.rb</filename>
+   <filetype>rb</filetype>
+   <usage_type>script</usage_type>
+   <checksum>F40E4F32</checksum>
+  </file>
+  <file>
+   <filename>dan_s_170_measure_test.rb</filename>
+   <filetype>rb</filetype>
+   <usage_type>test</usage_type>
+   <checksum>C5C859BC</checksum>
+  </file>
+  <file>
+   <filename>example_model.osm</filename>
+   <filetype>osm</filetype>
+   <usage_type>test</usage_type>
+   <checksum>C4F35230</checksum>
+  </file>
+ </files>
+</measure>

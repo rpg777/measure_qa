@@ -1,0 +1,63 @@
+<measure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://bcl.nrel.gov/xsd/measures/version/1.0.xsd">
+ <schema_version/>
+ <name>Predicted Mean Vote</name>
+ <uid>d26890c0-1281-4384-a676-5d38fa2e9e75</uid>
+ <version_id>628c904d-0f25-4e84-8c27-909629aa5b92</version_id>
+ <xml_checksum/>
+ <class_name/>
+ <display_name/>
+ <description>This measure adds the necessary data to people objects to support Predicted Mean Vote output data. It also adds the variable request.</description>
+ <modeler_description>This will not add new people objects, but rather just extend the ones that are in the model. It will rely on schedules already made in the model instead of creating new schedules.</modeler_description>
+ <tags>
+  <tag>Reporting.QAQC</tag>
+ </tags>
+ <attributes>
+  <attribute>
+   <name>Measure Type</name>
+   <value>ModelMeasure</value>
+   <datatype>string</datatype>
+  </attribute>
+  <attribute>
+   <name>Measure Function</name>
+   <value>Measure</value>
+   <datatype>string</datatype>
+  </attribute>
+  <attribute>
+   <name>Requires EnergyPlus Results</name>
+   <value>false</value>
+   <datatype>boolean</datatype>
+  </attribute>
+  <attribute>
+   <name>Uses SketchUp API</name>
+   <value>false</value>
+   <datatype>boolean</datatype>
+  </attribute>
+ </attributes>
+ <files>
+  <file>
+   <filename>PMV_Exercise6PlusNewSchedules.osm</filename>
+   <filetype>osm</filetype>
+  </file>
+  <file>
+   <filename>PMV_Exercise6PlusNewSchedulesIdealAir.osm</filename>
+   <filetype>osm</filetype>
+  </file>
+  <file>
+   <version>
+    <software_program>OpenStudio</software_program>
+    <identifier>1.0.0</identifier>
+    <min_compatible>1.11.0</min_compatible>
+   </version>
+   <filename>measure.rb</filename>
+   <filetype>rb</filetype>
+   <usage_type>script</usage_type>
+   <checksum>D23A436E</checksum>
+  </file>
+  <file>
+   <filename>PredictedMeanVote_Test.rb</filename>
+   <filetype>rb</filetype>
+   <usage_type>script</usage_type>
+   <checksum>D23A436E</checksum>
+  </file>
+ </files>
+</measure>

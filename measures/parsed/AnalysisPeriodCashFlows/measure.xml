@@ -1,0 +1,75 @@
+<measure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://bcl.nrel.gov/xsd/measures/version/1.0.xsd">
+ <schema_version/>
+ <name>Analysis Period Cash Flows</name>
+ <uid>a5d251bd-af5d-42e3-8c20-0160a37a7e18</uid>
+ <version_id>0b06dcb5-4921-4e0b-838c-282e8a4e4083</version_id>
+ <xml_checksum/>
+ <class_name/>
+ <display_name/>
+ <description>This will create a bar chart showign cash flows for the analysis period. Cash flows will be broken out by source. This will include Capital, operational, and Utility costs.</description>
+ <modeler_description>This is intened to be used on a model that either has default costs assigned in the baseline model or has had costs added in Energy Conservation Measures.</modeler_description>
+ <tags>
+  <tag>Reporting.QAQC</tag>
+ </tags>
+ <attributes>
+  <attribute>
+   <name>Measure Type</name>
+   <value>ReportingMeasure</value>
+   <datatype>string</datatype>
+  </attribute>
+  <attribute>
+   <name>Uses SketchUp API</name>
+   <value>false</value>
+   <datatype>boolean</datatype>
+  </attribute>
+ </attributes>
+ <files>
+  <file>
+   <version>
+    <software_program>OpenStudio</software_program>
+    <identifier>1.2.1</identifier>
+    <min_compatible>1.11.0</min_compatible>
+   </version>
+   <filename>measure.rb</filename>
+   <filetype>rb</filetype>
+   <usage_type>script</usage_type>
+   <checksum>D23A436E</checksum>
+  </file>
+  <file>
+   <filename>report.html.in</filename>
+   <filetype>in</filetype>
+   <usage_type>script</usage_type>
+   <checksum>D23A436E</checksum>
+  </file>
+  <file>
+   <filename>AnalysisPeriodCashFlows_Test.rb</filename>
+   <filetype>rb</filetype>
+   <usage_type>script</usage_type>
+   <checksum>D23A436E</checksum>
+  </file>
+  <file>
+   <filename>ExampleModel.idf</filename>
+   <filetype>idf</filetype>
+   <usage_type>script</usage_type>
+   <checksum>D23A436E</checksum>
+  </file>
+  <file>
+   <filename>ExampleModel.osm</filename>
+   <filetype>osm</filetype>
+   <usage_type>script</usage_type>
+   <checksum>D23A436E</checksum>
+  </file>
+  <file>
+   <filename>USA_CO_Golden-NREL.724666_TMY3.epw</filename>
+   <filetype>epw</filetype>
+   <usage_type>script</usage_type>
+   <checksum>D23A436E</checksum>
+  </file>
+  <file>
+   <filename>reportOutput.html</filename>
+   <filetype>html</filetype>
+   <usage_type>script</usage_type>
+   <checksum>D23A436E</checksum>
+  </file>
+ </files>
+</measure>

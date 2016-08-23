@@ -1,0 +1,49 @@
+<measure xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://bcl.nrel.gov/xsd/measures/version/1.0.xsd">
+ <schema_version/>
+ <name>Set Interior Walls to Adiabatic</name>
+ <uid>7e440f88-1b2d-444e-8586-9a8d1ac84b8d</uid>
+ <version_id>34a4b299-3a55-415b-81c6-d7a4520f7272</version_id>
+ <xml_checksum/>
+ <class_name/>
+ <display_name/>
+ <description>Set interior walls to Adiabatic and assign a hard construction.</description>
+ <modeler_description>This will change wall with a surface boundary condition to adiabatic and will assigned the selected construction.</modeler_description>
+ <tags>
+  <tag>Envelope.Opaque</tag>
+ </tags>
+ <attributes>
+  <attribute>
+   <name>Measure Type</name>
+   <value>ModelMeasure</value>
+   <datatype>string</datatype>
+  </attribute>
+  <attribute>
+   <name>Uses SketchUp API</name>
+   <value>false</value>
+   <datatype>boolean</datatype>
+  </attribute>
+ </attributes>
+ <files>
+  <file>
+   <filename>EnvelopeAndLoadTestModel_01.osm</filename>
+   <filetype>osm</filetype>
+  </file>
+  <file>
+   <version>
+    <software_program>OpenStudio</software_program>
+    <identifier>1.0.4</identifier>
+    <min_compatible>1.11.0</min_compatible>
+   </version>
+   <filename>measure.rb</filename>
+   <filetype>rb</filetype>
+   <usage_type>script</usage_type>
+   <checksum>D23A436E</checksum>
+  </file>
+  <file>
+   <filename>SetInteriorWallsAndFloorsToSelectedConstruction_Test.rb</filename>
+   <filetype>rb</filetype>
+   <usage_type>script</usage_type>
+   <checksum>D23A436E</checksum>
+  </file>
+ </files>
+</measure>
