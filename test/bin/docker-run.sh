@@ -11,16 +11,18 @@ eval "$(rbenv init -)"
 # than 2 hrs.
 
 cd /measure_qa
-echo "RUBYLIB = $RUBYLIB"
+echo "Running tests with RUBYLIB = $RUBYLIB"
 
 #gem update --system
 #gem install bundler
 #bundle update
 bundle install
 
-bundle exec rake test:all
+ruby -Ilib -e 'ARGV.each { |f| require f }' ./measures/parsed/**/tests/*_[tT]est.rb
 
-bundle exec rake run_rubocop
+#bundle exec rake test:all
+
+#bundle exec rake run_rubocop
 
 # case $CIRCLE_NODE_INDEX in
 #   0)
