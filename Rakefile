@@ -12,6 +12,8 @@ require 'json'
 require 'bcl'
 require 'bcl/version'
 
+gem 'test-unit'
+
 namespace :test do
 
   desc 'Run tests for all measures'
