@@ -18,6 +18,8 @@ echo "Running tests with RUBYLIB = $RUBYLIB"
 #bundle update
 bundle install
 
+# sldjfsldkj
+
 ruby -Ilib -e 'ARGV.each { |f| require f }' ./measures/parsed/**/tests/*_[tT]est.rb
 
 #bundle exec rake test:all
