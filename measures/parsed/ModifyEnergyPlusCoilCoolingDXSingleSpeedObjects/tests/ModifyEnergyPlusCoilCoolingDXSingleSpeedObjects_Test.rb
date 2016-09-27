@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class ModifyEnergyPlusCoilCoolingDXSingleSpeedObjects_Test < Test::Unit::TestCase
+class ModifyEnergyPlusCoilCoolingDXSingleSpeedObjects_Test < MiniTest::Test
 
 
   def test_ModifyEnergyPlusCoilCoolingDXSingleSpeedObjects

@@ -24,7 +24,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class ReduceSpaceInfiltrationByPercentage_Test < Test::Unit::TestCase
+class ReduceSpaceInfiltrationByPercentage_Test < MiniTest::Test
 
   def test_ReduceSpaceInfiltrationByPercentage_01_BadInputs
 

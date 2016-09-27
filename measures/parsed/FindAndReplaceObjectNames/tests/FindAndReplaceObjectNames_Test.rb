@@ -24,7 +24,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class FindAndReplaceObjectNames_Test < Test::Unit::TestCase
+class FindAndReplaceObjectNames_Test < MiniTest::Test
   
   # def setup
   # end

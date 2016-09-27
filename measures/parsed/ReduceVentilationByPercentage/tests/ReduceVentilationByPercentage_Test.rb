@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class ReduceVentilationByPercentage_Test < Test::Unit::TestCase
+class ReduceVentilationByPercentage_Test < MiniTest::Test
 
   def test_ReduceVentilationByPercentage_01_BadInputs
 

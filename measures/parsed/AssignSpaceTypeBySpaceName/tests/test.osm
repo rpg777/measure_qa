@@ -1,7 +1,7 @@
 
 OS:Version,
-  {b34378ee-0a03-4d5d-8857-759e26510d19}, !- Handle
-  1.3.1;                                  !- Version Identifier
+  {d5901100-28ef-4d29-b911-32882ab84ac0}, !- Handle
+  1.10.0;                                 !- Version Identifier
 
 OS:Building,
   {c1172cf7-7164-434b-bccc-0ed6ef7c399a}, !- Handle
@@ -8948,7 +8948,7 @@ OS:SurfaceConvectionAlgorithm:Outside,
 OS:HeatBalanceAlgorithm,
   {40bcfc1e-6707-4e58-8a47-2c07e50a8345}, !- Handle
   ConductionTransferFunction,             !- Algorithm
-  200;                                    !- Surface Temperature Upper Limit {F}
+  200;                                    !- Surface Temperature Upper Limit {C}
 
 OS:ZoneAirHeatBalanceAlgorithm,
   {425b2c19-2bfa-41a5-93f6-0fdbfbba41d7}, !- Handle

@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class AddCostPerFloorAreaToUnusedLights_Test < Test::Unit::TestCase
+class AddCostPerFloorAreaToUnusedLights_Test < MiniTest::Test
   
   
   def test_AddCostPerFloorAreaToUnusedLights_fail

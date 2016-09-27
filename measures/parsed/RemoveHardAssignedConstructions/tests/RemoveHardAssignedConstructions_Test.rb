@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class RemoveHardAssignedConstructions_Test < Test::Unit::TestCase
+class RemoveHardAssignedConstructions_Test < MiniTest::Test
 
   
   def test_RemoveHardAssignedConstructions

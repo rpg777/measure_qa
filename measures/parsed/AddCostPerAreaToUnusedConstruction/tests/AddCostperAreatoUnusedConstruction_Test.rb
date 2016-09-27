@@ -2,11 +2,18 @@ require 'openstudio'
 
 require 'openstudio/ruleset/ShowRunnerOutput'
 
-require "#{File.dirname(__FILE__)}/../measure.rb"
+#require "#{File.dirname(__FILE__)}/../measure.rb"
 
-require 'test/unit'
+require 'minitest/autorun'
 
-class AddCostPerAreaToUnusedConstruction_Test < Test::Unit::TestCase
+require_relative '../measure.rb'
+
+require 'fileutils'
+
+class AddCostPerAreaToUnusedConstruction_Test < MiniTest::Test
+
+#require 'test/unit'
+#class AddCostPerAreaToUnusedConstruction_Test < MiniTest::Test
 
   # def setup
   # end

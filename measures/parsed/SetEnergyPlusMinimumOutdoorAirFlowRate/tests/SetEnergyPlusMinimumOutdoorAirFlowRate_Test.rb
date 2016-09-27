@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class SetEnergyPlusMinimumOutdoorAirFlowRate_Test < Test::Unit::TestCase
+class SetEnergyPlusMinimumOutdoorAirFlowRate_Test < MiniTest::Test
 
   
   def test_SetEnergyPlusMinimumOutdoorAirFlowRate

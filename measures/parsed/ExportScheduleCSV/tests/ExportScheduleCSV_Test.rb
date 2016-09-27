@@ -8,7 +8,7 @@ require 'fileutils'
 
 require 'test/unit'
 
-class ExportScheduleCSV_Test < Test::Unit::TestCase
+class ExportScheduleCSV_Test < MiniTest::Test
     
   # paths to expected test files, includes osm 
   def modelPath

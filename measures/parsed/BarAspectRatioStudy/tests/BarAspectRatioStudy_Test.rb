@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class BarAspectRatioStudy_Test < Test::Unit::TestCase
+class BarAspectRatioStudy_Test < MiniTest::Test
 
   
   def test_BarAspectRatioStudy

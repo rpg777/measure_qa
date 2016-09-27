@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class AssignSpaceTypeBySpaceName_Test < Test::Unit::TestCase
+class AssignSpaceTypeBySpaceName_Test < MiniTest::Test
 
   
   def test_AssignSpaceTypeBySpaceName_skipAssigned

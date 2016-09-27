@@ -8,7 +8,7 @@ require 'fileutils'
 
 require 'test/unit'
 
-class AnalysisPeriodCashFlows_Test < Test::Unit::TestCase
+class AnalysisPeriodCashFlows_Test < MiniTest::Test
     
   # paths to expected test files, includes osm and eplusout.sql
   def modelPath

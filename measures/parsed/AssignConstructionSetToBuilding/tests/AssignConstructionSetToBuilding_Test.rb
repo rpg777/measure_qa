@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class AssignConstructionSetToBuilding_Test < Test::Unit::TestCase
+class AssignConstructionSetToBuilding_Test < MiniTest::Test
 
 
   def test_AssignConstructionSetToBuilding

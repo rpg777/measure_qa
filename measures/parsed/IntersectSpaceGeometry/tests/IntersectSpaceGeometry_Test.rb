@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class IntersectSpaceGeometry_Test < Test::Unit::TestCase
+class IntersectSpaceGeometry_Test < MiniTest::Test
 
   
   def test_IntersectSpaceGeometry

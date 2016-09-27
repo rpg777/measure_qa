@@ -5,7 +5,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class SetCOPforTwoSpeedDXCoolingUnits_Test < Test::Unit::TestCase
+class SetCOPforTwoSpeedDXCoolingUnits_Test < MiniTest::Test
   
   def test_SetCOPforTwoSpeedDXCoolingUnits_single_loop
      

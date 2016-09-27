@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class CleanupSpaceOrigins_Test < Test::Unit::TestCase
+class CleanupSpaceOrigins_Test < MiniTest::Test
 
   
   def test_CleanupSpaceOrigins

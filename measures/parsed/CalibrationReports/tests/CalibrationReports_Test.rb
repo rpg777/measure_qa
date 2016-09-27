@@ -8,7 +8,7 @@ require 'fileutils'
 
 require 'test/unit'
 
-class CalibrationReports_Test < Test::Unit::TestCase
+class CalibrationReports_Test < MiniTest::Test
 
   # paths to expected test files, includes osm and eplusout.sql
   def modelPath

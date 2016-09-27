@@ -4,7 +4,7 @@ require 'minitest/autorun'
 require_relative '../measure.rb'
 require 'fileutils'
 
-class DanS170MeasureTest < MiniTest::Unit::TestCase
+class DanS170MeasureTest < MiniMiniTest::Test
 
   # def setup
   # end

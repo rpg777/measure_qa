@@ -24,7 +24,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class RotateBuilding_Test < Test::Unit::TestCase
+class RotateBuilding_Test < MiniTest::Test
   
   # def setup
   # end

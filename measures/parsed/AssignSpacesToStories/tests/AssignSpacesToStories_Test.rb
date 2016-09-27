@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class AssignSpacesToStories_Test < Test::Unit::TestCase
+class AssignSpacesToStories_Test < MiniTest::Test
 
   
   def test_AssignSpacesToStories

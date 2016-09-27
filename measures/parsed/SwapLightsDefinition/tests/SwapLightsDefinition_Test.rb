@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class SwapLightsDefinition_Test < Test::Unit::TestCase
+class SwapLightsDefinition_Test < MiniTest::Test
 
   def test_SwapLightsDefinition_fail
 

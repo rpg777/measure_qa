@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class RemoveInternalLoadsDirectlyAssignedToSpaces_Test < Test::Unit::TestCase
+class RemoveInternalLoadsDirectlyAssignedToSpaces_Test < MiniTest::Test
 
   
   def test_RemoveInternalLoadsDirectlyAssignedToSpaces

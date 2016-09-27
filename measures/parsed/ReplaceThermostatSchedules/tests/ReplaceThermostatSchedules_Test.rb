@@ -5,7 +5,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class ReplaceThermostatSchedules_Test < Test::Unit::TestCase
+class ReplaceThermostatSchedules_Test < MiniTest::Test
   
   # def setup
   # end

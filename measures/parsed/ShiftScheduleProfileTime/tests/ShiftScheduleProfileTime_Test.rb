@@ -5,7 +5,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class ShiftScheduleProfileTime_Test < Test::Unit::TestCase
+class ShiftScheduleProfileTime_Test < MiniTest::Test
 
   def test_ShiftScheduleProfileTime_a
      

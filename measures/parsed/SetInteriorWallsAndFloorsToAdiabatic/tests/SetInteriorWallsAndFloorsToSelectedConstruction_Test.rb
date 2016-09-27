@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class SetInteriorWallsAndFloorsToAdiabatic_Test < Test::Unit::TestCase
+class SetInteriorWallsAndFloorsToAdiabatic_Test < MiniTest::Test
 
   
   def test_SetInteriorWallsAndFloorsToAdiabatic

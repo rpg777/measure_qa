@@ -6,7 +6,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class AddMeter_Test < Test::Unit::TestCase
+class AddMeter_Test < MiniTest::Test
 
   def test_AddMeter_BadInput
 

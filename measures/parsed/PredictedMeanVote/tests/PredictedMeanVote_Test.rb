@@ -5,7 +5,7 @@ require "#{File.dirname(__FILE__)}/../measure.rb"
 
 require 'test/unit'
 
-class PredictedMeanVote_Test < Test::Unit::TestCase
+class PredictedMeanVote_Test < MiniTest::Test
   
   # def setup
   # end
