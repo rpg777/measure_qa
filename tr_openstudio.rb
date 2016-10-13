@@ -74,9 +74,10 @@ if options[:bcl_fetch] || options[:test_bcl]
 end
 
 tests = []
-
+measures = []
 if options[:test_bcl]
-	tests = Dir.glob("measures/parsed/**/tests/*_[tT]est.rb")
+  measures = Dir.glob("measures/parsed/**")
+  tests = Dir.glob("measures/parsed/**/tests/*_[tT]est.rb")
 
 elsif !options[:test_file] && !options[:tests_map]
 	puts "#{$0}: ERROR: No test(s) specified, use '-t --test', '-m --mask', or try '#{$0} -h' for help."
@@ -116,6 +117,47 @@ query = "def +test_([A-Za-z_0-9]+)" # minitest
 #query_spec = "it +([A-Za-z_0-9]+)" # RSpec (in progress)
 
 envs = options[:envs]
+
+
+# store the binding before each measure
+b = binding
+measures.each do |measure|
+  require 'openstudio'
+  
+  bcl_measure = OpenStudio::BCLMeasure.load(measure)
+  
+  if bcl_measure.empty?
+    puts "Cannot load measure '#{measure}'"
+  else
+    bcl_measure = bcl_measure.get
+    
+    # see if there are updates, want to make sure to perform both checks so do outside of conditional
+    file_updates = bcl_measure.checkForUpdatesFiles # checks if any files have been updated
+    xml_updates = bcl_measure.checkForUpdatesXML # only checks if xml as loaded has been changed since last save
+    
+    missing_fields = false
+    begin
+      missing_fields = bcl_measure.missingRequiredFields
+    rescue
+    end
+      
+    if file_updates || xml_updates || missing_fields
+      puts "Changes detected in measure'#{measure}'"
+
+      # try to load the ruby measure
+      info = nil
+      begin
+        info = eval("OpenStudio::Ruleset.getInfo(bcl_measure, OpenStudio::Model::OptionalModel.new, OpenStudio::OptionalWorkspace.new)", b)
+      rescue Exception => e  
+        info = OpenStudio::Ruleset::RubyUserScriptInfo.new(e.message)
+      end
+      info.update(bcl_measure)
+
+      # do the save
+      #bcl_measure.save
+    end
+  end
+end
 
 
 tests.each do |test|
@@ -165,4 +207,4 @@ end
 File.open('test_log.json', 'w') { |f| f << JSON.pretty_generate(log_json)}
 
 puts "#{$0}: Tests complete. Test runner ran #{log.size} total tests, with #{errors.size} errors."
-puts "#{$0}: See #{options[:wd]}/#{log_file} for details." if errors.size > 0
+puts "#{$0}: See #{options[:wd]}/#{log_file} or test_log.csv for details." if errors.size > 0
