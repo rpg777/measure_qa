@@ -19,7 +19,7 @@ echo "Running tests with RUBYLIB = $RUBYLIB"
 bundle install
 
 
-ruby -Ilib -e 'ARGV.each { |f| require f }' ./measures/parsed/**/tests/*_[tT]est.rb
+ruby ./test/bin/tr_openstudio.rb -m ./measures/parsed/**/
 
 #bundle exec rake test:all
 
