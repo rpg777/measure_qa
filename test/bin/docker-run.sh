@@ -19,7 +19,7 @@ echo "Running tests with RUBYLIB = $RUBYLIB"
 bundle install
 
 
-ruby ./test/bin/tr_openstudio.rb -m ./measures/parsed/**/
+ruby ./test/bin/tr_openstudio.rb -m ./measures/parsed
 
 #bundle exec rake test:all
 
