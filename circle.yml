@@ -7,9 +7,9 @@ machine:
 dependencies:
   override:
 
-#general:
-#  artifacts:
-#    - $CIRCLE_TEST_REPORTS
+general:
+  artifacts:
+    - $CIRCLE_TEST_REPORTS
 
 test:
   override:

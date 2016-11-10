@@ -85,10 +85,13 @@ measures = []
 test_files = []
 
 if options[:test_bcl]
-  measures = Dir.glob("measures/parsed/**")
+  #measures = Dir.glob("measures/parsed/**")
+  measures = Dir.glob("measures/parsed")
 else
   measures = []
   measure_dirs = options[:measures].split(/[\s,]/)
+  puts "foo"
+  puts measure_dirs
   measure_dirs.each do |measure_dir|
     if !/\*/.match(measure_dir)
       measure_dir = File.join(measure_dir, '*')
@@ -96,7 +99,9 @@ else
     measures.concat(Dir.glob(measure_dir).select { |fn| File.directory?(fn) })
   end
 end
-  
+
+puts measures
+
 puts "Inspecting #{measures.size} measure directories..."
 measures.each do |m|
   tfile_search = File.join(m, options[:tests_dir], options[:testfile_mask])
