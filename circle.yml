@@ -10,6 +10,10 @@ dependencies:
 general:
   artifacts:
     - $CIRCLE_TEST_REPORTS
+    - "test_log.csv"
+    - "test_log.json"
+    - simplecov
+
 
 test:
   override:
@@ -31,16 +35,16 @@ test:
     - docker run -e CIRCLE_NODE_TOTAL -e CIRCLE_NODE_INDEX -v $(pwd):/measure_qa nrel/openstudio /measure_qa/test/bin/docker-run.sh:
         parallel: true
         timeout: 7200
-    - ls $CIRCLE_TEST_REPORTS/minitest:
-        parallel: true
-    - rsync -av test/reports/ $CIRCLE_TEST_REPORTS/minitest/:
-        parallel: true
-    - rsync -av test/coverage/ $CIRCLE_TEST_REPORTS/coverage/:
-        parallel: true
-    - rsync -av test/style/ $CIRCLE_TEST_REPORTS/style/:
-        parallel: true
-    - ls $CIRCLE_TEST_REPORTS/minitest:
-        parallel: true
+    #- ls $CIRCLE_TEST_REPORTS/minitest:
+    #    parallel: true
+    #- rsync -av test/reports/ $CIRCLE_TEST_REPORTS/minitest/:
+    #    parallel: true
+    #- rsync -av test/coverage/ $CIRCLE_TEST_REPORTS/coverage/:
+    #    parallel: true
+    #- rsync -av test/style/ $CIRCLE_TEST_REPORTS/style/:
+    #    parallel: true
+    #- ls $CIRCLE_TEST_REPORTS/minitest:
+    #    parallel: true
 
 notify: 
   webhooks: 
