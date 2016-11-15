@@ -31,20 +31,20 @@ test:
         parallel: true
     - touch test/reports/foo:
         parallel: true
-    #- docker run -e CIRCLE_NODE_TOTAL -e CIRCLE_NODE_INDEX -e CIRCLE_ARTIFACTS -e COVERALLS_REPO_TOKEN -v /tmp:/tmp -v $(pwd):/measure_qa nrel/openstudio /measure_qa/test/bin/docker-run.sh:
-    - docker run -e CIRCLE_NODE_TOTAL -e CIRCLE_NODE_INDEX -v $(pwd):/measure_qa nrel/openstudio /measure_qa/test/bin/docker-run.sh:
+    #- docker run -e CIRCLE_NODE_TOTAL -e CIRCLE_NODE_INDEX -v $(pwd):/measure_qa nrel/openstudio /measure_qa/test/bin/docker-run.sh:
+    - docker run -e CIRCLE_NODE_TOTAL -e CIRCLE_NODE_INDEX -e CIRCLE_ARTIFACTS -e COVERALLS_REPO_TOKEN -v /tmp:/tmp -v $(pwd):/measure_qa nrel/openstudio /measure_qa/test/bin/docker-run.sh:
         parallel: true
         timeout: 7200
-    #- ls $CIRCLE_TEST_REPORTS/minitest:
-    #    parallel: true
-    #- rsync -av test/reports/ $CIRCLE_TEST_REPORTS/minitest/:
-    #    parallel: true
+    - ls $CIRCLE_TEST_REPORTS/minitest:
+        parallel: true
+    - rsync -av test/reports/ $CIRCLE_TEST_REPORTS/minitest/:
+        parallel: true
     - rsync -av test/coverage/ $CIRCLE_TEST_REPORTS/coverage/:
         parallel: true
-    #- rsync -av test/style/ $CIRCLE_TEST_REPORTS/style/:
-    #    parallel: true
-    #- ls $CIRCLE_TEST_REPORTS/minitest:
-    #    parallel: true
+    - rsync -av test/style/ $CIRCLE_TEST_REPORTS/style/:
+        parallel: true
+    - ls $CIRCLE_TEST_REPORTS/minitest:
+        parallel: true
 
 notify: 
   webhooks: 
