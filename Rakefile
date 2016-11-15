@@ -19,11 +19,12 @@ namespace :test do
   desc 'Run tests for all measures'
   Rake::TestTask.new('all') do |t|
     t.libs << 'test'
-    #t.pattern = "measures/parsed/**/tests/*_[tT]est.rb"
-    t.test_files = Dir['measures/parsed/AddCostPerAreaToUnusedConstruction/tests/*_[tT]est.rb'] # run a one-off test
+    t.pattern = "measures/parsed/**/tests/*_[tT]est.rb"
+    #t.test_files = Dir['measures/parsed/AddCostPerAreaToUnusedConstruction/tests/*_[tT]est.rb'] # run a one-off test
 
     t.warning = false
     t.verbose = true
+
   end
 
   desc "Run all test suites with error handling"
@@ -34,6 +35,10 @@ namespace :test do
       end
     end
     puts "Finished running all tests"
+  end
+
+  task :simple do
+    Dir.glob('./measures/parsed/**/tests/*_[tT]est.rb').each { |file| require file}
   end
 
 end
