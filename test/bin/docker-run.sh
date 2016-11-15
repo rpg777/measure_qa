@@ -23,7 +23,7 @@ ruby ./test/bin/tr_openstudio.rb -m ./measures/parsed
 
 #bundle exec rake test:all
 
-bundle exec rake run_rubocop
+#bundle exec rake run_rubocop
 
 # case $CIRCLE_NODE_INDEX in
 #   0)
