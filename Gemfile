@@ -9,6 +9,8 @@ gem 'json', '~> 1.7.7'
 
 gem 'bcl', :git => 'https://github.com/NREL/bcl-gem'
 
+gem 'simplecov', :require => false
+
 group :test do
   gem 'minitest', '~> 5.4.0'
   gem 'rubocop', '~> 0.26.0'
